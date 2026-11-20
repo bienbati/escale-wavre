@@ -335,3 +335,6 @@ section { padding-block: clamp(64px, 10vw, 120px); }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+.video-serie { max-width: 360px; margin: 0 auto clamp(32px, 5vw, 48px); }
+.video-serie video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #000; object-fit: cover; }
+.video-serie figcaption { margin-top: 8px; font-size: .82rem; color: var(--gris); text-align: center; }
