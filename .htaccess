@@ -18,3 +18,10 @@ AddType image/svg+xml .svg
 # RewriteCond %{HTTPS} off [OR]
 # RewriteCond %{HTTP_HOST} !^www\. [NC]
 # RewriteRule ^ https://www.escale-wavre.be%{REQUEST_URI} [L,R=301]
+
+# Autorise bienbati.be à récupérer les photos (réalisation Bien Bâti)
+<IfModule mod_headers.c>
+  <FilesMatch "\.jpe?g$">
+    Header set Access-Control-Allow-Origin "https://www.bienbati.be"
+  </FilesMatch>
+</IfModule>
