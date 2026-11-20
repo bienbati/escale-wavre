@@ -15,7 +15,7 @@
 <meta property="og:locale" content="fr_BE">
 <meta name="theme-color" content="#0e0e0d">
 <link rel="preload" href="fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,6 +32,7 @@
     "addressCountry": "BE"
   },
   "image": "https://www.escale-wavre.be/img/photos/salle-soir.jpg",
+  "sameAs": ["https://www.facebook.com/profile.php?id=100067364105003"],
   "servesCuisine": "Cuisine belge familiale",
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true }
@@ -132,6 +133,14 @@
       </div>
     </div>
     <p class="carte__pied">Le plat du moment est annoncé au bar et sur notre page Google.</p>
+
+    <div class="marques" id="marques">
+      <p class="label">Au comptoir, on sert notamment</p>
+      <dl class="marques__liste">
+        <div><dt>Bières</dt><dd><span>Maes</span><span>Grimbergen</span></dd></div>
+        <div><dt>Softs</dt><dd><span>Coca-Cola</span><span>Aquarius</span></dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -175,11 +184,31 @@
   </div>
 </section>
 
+<div class="damier" role="presentation"></div>
+
+<section class="renovation" id="renovation">
+  <div class="wrap renovation__grille">
+    <div class="renovation__texte">
+      <p class="label">La rénovation</p>
+      <h2>Un bar rénové <em>par Bien Bâti</em></h2>
+      <p>En 2026, l’arrière de L’Escale a été entièrement refait : couloir, sanitaires, carreaux de ciment noir et blanc, lambris noir, portes battantes et puits de lumière. Le même esprit café d’autrefois, avec des finitions d’aujourd’hui.</p>
+      <p>Les travaux ont été réalisés par Bien Bâti, entreprise de rénovation basée à Rhode-Saint-Genèse. Prochaine étape en janvier 2027 : la salle avant, le comptoir et la façade.</p>
+      <div class="boutons">
+        <a class="bouton bouton--ligne" href="https://www.bienbati.be/" target="_blank" rel="noopener">Découvrir Bien Bâti</a>
+      </div>
+    </div>
+    <div class="renovation__photos">
+      <figure class="photo photo--reno"><img src="img/photos/renovation-pendant.jpg" alt="L’arrière du bar pendant les travaux : carrelage posé, murs en cours de finition" width="1100" height="1100" loading="lazy"><figcaption class="etiquette">Pendant les travaux</figcaption></figure>
+      <figure class="photo photo--reno"><img src="img/photos/renovation-apres.jpg" alt="L’arrière du bar après les travaux : portes noires et carreaux de ciment" width="1100" height="1468" loading="lazy"><figcaption class="etiquette">Après</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <footer class="pied">
   <div class="wrap">
     <div class="pied__haut">
       <img src="img/logo-great-vibes-mot-blanc-transparent.svg" alt="L’Escale" width="200" height="64">
-      <p>Place Cardinal Mercier 24, 1300 Wavre<br>Ouvert tous les jours</p>
+      <p>Place Cardinal Mercier 24, 1300 Wavre<br>Ouvert tous les jours<br><a href="https://www.facebook.com/profile.php?id=100067364105003" target="_blank" rel="noopener">Suivez-nous sur Facebook</a></p>
     </div>
     <div class="pied__legal">
       <p>Exploitation : F.C.C. (Financing Company &amp; Co) · BCE 0474676527</p>
