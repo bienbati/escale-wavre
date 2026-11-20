@@ -1,0 +1,274 @@
+/* L'Escale — Apéro Bar, Wavre
+   Concept : bandes noires et blanches qui alternent, comme le carrelage d'un vieux café ;
+   un damier comme seul ornement ; la typographie fait le reste. */
+
+@font-face { font-family: "Playfair Display"; src: url("../fonts/playfair-display-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("../fonts/playfair-display-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("../fonts/playfair-display-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Josefin Sans"; src: url("../fonts/josefin-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Josefin Sans"; src: url("../fonts/josefin-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Jost"; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Jost"; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+:root {
+  --noir: #0e0e0d;
+  --noir-2: #1b1b19;
+  --blanc: #fbfaf7;
+  --gris: #6e6c66;
+  --gris-clair: #a9a7a0;
+  --filet-noir: rgba(14, 14, 13, .16);
+  --filet-blanc: rgba(251, 250, 247, .22);
+
+  --f-titre: "Playfair Display", "Didot", Georgia, serif;
+  --f-label: "Josefin Sans", "Futura", "Century Gothic", sans-serif;
+  --f-texte: "Jost", "Futura", "Helvetica Neue", Arial, sans-serif;
+
+  --largeur: 1120px;
+  --texte: 62ch;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  background: var(--blanc);
+  color: var(--noir);
+  font-family: var(--f-texte);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.wrap {
+  max-width: var(--largeur);
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+.label {
+  font-family: var(--f-label);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--f-titre);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+  line-height: 1.12;
+  margin: .4em 0 .5em;
+  text-wrap: balance;
+}
+h2 em { font-style: italic; }
+
+/* ---------- Barre de navigation ---------- */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--noir);
+  color: var(--blanc);
+  border-bottom: 1px solid var(--filet-blanc);
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 21; background: var(--noir);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.nav__logo img { height: 34px; width: auto; }
+.nav ul { display: flex; gap: clamp(14px, 3vw, 36px); list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; opacity: .82; transition: opacity .2s; }
+.nav a:hover { opacity: 1; }
+.nav ul a { font-family: var(--f-label); font-size: .74rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+
+/* ---------- Ouverture ---------- */
+.hero { background: var(--noir); color: var(--blanc); text-align: center; }
+.hero .wrap { padding-block: clamp(48px, 9vw, 96px) clamp(36px, 6vw, 64px); }
+.hero__logo { width: min(560px, 86%); height: auto; margin: 0 auto; }
+.hero__accroche {
+  font-family: var(--f-titre);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  color: var(--gris-clair);
+  margin: 26px auto 0;
+  max-width: 34ch;
+  text-wrap: balance;
+}
+.hero__infos {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px;
+  margin: 30px 0 0; padding: 0; list-style: none;
+}
+.hero__infos { gap: 10px 18px; }
+.hero__infos li { display: flex; align-items: center; gap: 18px; }
+.hero__infos li + li::before { content: ""; flex: none; width: 5px; height: 5px; background: var(--blanc); transform: rotate(45deg) translateY(-1px); opacity: .55; }
+
+/* ---------- Emplacements photo ---------- */
+.photo {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  max-width: 100%;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 11px, var(--filet-noir) 11px 12px),
+    #ecebe6;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo figcaption {
+  position: absolute; inset: auto 0 0 0;
+  padding: 12px 14px;
+  font-family: var(--f-label); font-size: .7rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gris);
+}
+.photo--attente figcaption::before { content: "Photo à venir · "; opacity: .75; }
+.photo:has(img) figcaption { display: none; }
+.hero .photo, .sombre .photo {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 11px, var(--filet-blanc) 11px 12px),
+    var(--noir-2);
+}
+.hero .photo figcaption, .sombre .photo figcaption { color: var(--gris-clair); }
+.hero__photo { margin-top: clamp(40px, 7vw, 72px); aspect-ratio: 21 / 9; }
+.hero__photo img { object-position: 22% 50%; }
+
+/* ---------- Le damier ---------- */
+.damier {
+  height: 28px;
+  background-color: var(--blanc);
+  background-image:
+    linear-gradient(45deg, var(--noir) 25%, transparent 25%, transparent 75%, var(--noir) 75%),
+    linear-gradient(45deg, var(--noir) 25%, transparent 25%, transparent 75%, var(--noir) 75%);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  border-block: 1px solid var(--noir);
+}
+
+/* ---------- Sections ---------- */
+section { padding-block: clamp(64px, 10vw, 120px); }
+.sombre { background: var(--noir); color: var(--blanc); }
+
+.bar__grille {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+.bar__texte p { max-width: var(--texte); margin: 0 0 1.1em; }
+.bar__texte .lettrine::first-letter {
+  font-family: var(--f-titre); float: left; font-size: 3.6em; line-height: .82; padding: .06em .1em 0 0;
+}
+.bar__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bar__photos .photo:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.bar__photos .photo { aspect-ratio: 4 / 5; }
+
+.atouts {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: clamp(56px, 8vw, 88px) 0 0; padding: 0; list-style: none;
+  border-top: 1px solid var(--noir);
+}
+.atouts li { padding: 22px 20px 0 0; }
+.atouts li + li { padding-left: 20px; border-left: 1px solid var(--filet-noir); }
+.atouts strong { display: block; font-family: var(--f-titre); font-weight: 400; font-size: 1.35rem; line-height: 1.25; margin-bottom: 6px; }
+.atouts span { color: var(--gris); font-size: .95rem; }
+
+/* ---------- La carte ---------- */
+.carte__tete { text-align: center; max-width: 40rem; margin: 0 auto clamp(48px, 7vw, 72px); }
+.carte__tete p { color: var(--gris-clair); margin: 0; }
+.carte__cadre {
+  border: 1px solid var(--filet-blanc);
+  outline: 1px solid var(--filet-blanc);
+  outline-offset: 6px;
+  padding: clamp(32px, 5vw, 60px) clamp(22px, 5vw, 64px);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(36px, 5vw, 64px);
+}
+.rubrique h3 {
+  font-family: var(--f-label); font-weight: 600; font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.rubrique .quand { font-family: var(--f-titre); font-style: italic; color: var(--gris-clair); margin: 0 0 20px; font-size: 1rem; }
+.rubrique ul { list-style: none; margin: 0; padding: 0; }
+.rubrique li {
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: var(--f-titre); font-size: 1.22rem; line-height: 1.35;
+  padding-block: 9px;
+}
+.rubrique li { justify-content: space-between; border-bottom: 1px solid var(--filet-blanc); padding-block: 12px; }
+.rubrique li:last-child { border-bottom: 0; }
+.rubrique li small { font-family: var(--f-texte); font-size: .8rem; color: var(--gris-clair); white-space: nowrap; }
+.carte__pied { text-align: center; margin: 40px 0 0; color: var(--gris-clair); font-size: .95rem; }
+
+/* ---------- Horaires & accès ---------- */
+.infos__grille {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 96px);
+}
+.horaires { width: 100%; border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.horaires th, .horaires td { text-align: left; padding: 16px 0; border-bottom: 1px solid var(--filet-noir); vertical-align: baseline; }
+.horaires th { font-weight: 400; padding-right: 16px; }
+.horaires td { font-family: var(--f-titre); font-size: 1.5rem; white-space: nowrap; text-align: right; }
+.note { color: var(--gris); font-size: .92rem; margin-top: 18px; }
+
+.adresse { font-style: normal; font-family: var(--f-titre); font-size: 1.5rem; line-height: 1.4; margin: 8px 0 18px; }
+.acces { list-style: none; padding: 0; margin: 0 0 28px; }
+.acces li { padding: 8px 0 8px 22px; position: relative; }
+.acces li::before { content: ""; position: absolute; left: 2px; top: 1.05em; width: 6px; height: 6px; background: var(--noir); transform: rotate(45deg); }
+
+.bouton {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--f-label); font-size: .76rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 26px 14px;
+  border: 1px solid var(--noir);
+  background: var(--noir); color: var(--blanc);
+  transition: background .2s, color .2s;
+}
+.bouton:hover { background: transparent; color: var(--noir); }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton--ligne { background: transparent; color: var(--noir); }
+.bouton--ligne:hover { background: var(--noir); color: var(--blanc); }
+.infos .photo { margin-top: 36px; aspect-ratio: 9 / 4; }
+
+/* ---------- Pied de page ---------- */
+.pied { background: var(--noir); color: var(--blanc); }
+.pied .wrap { padding-block: 64px 36px; display: grid; gap: 40px; }
+.pied__haut { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+.pied__haut img { height: 64px; width: auto; }
+.pied__haut p { margin: 0; color: var(--gris-clair); text-align: right; }
+.pied__legal {
+  border-top: 1px solid var(--filet-blanc); padding-top: 22px;
+  color: var(--gris-clair); font-size: .8rem; line-height: 1.6;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px;
+}
+.pied__legal p { margin: 0; }
+
+/* ---------- Petits écrans ---------- */
+@media (max-width: 900px) {
+  .carte__cadre { grid-template-columns: 1fr 1fr; }
+  .carte__cadre .rubrique:last-child { grid-column: 1 / -1; }
+  .atouts { grid-template-columns: 1fr 1fr; }
+  .atouts li:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 760px) {
+  .bar__grille, .infos__grille { grid-template-columns: 1fr; }
+  .carte__cadre { grid-template-columns: 1fr; }
+  .nav ul { gap: 14px; }
+  .nav ul li:nth-child(1) { display: none; }
+  .hero__photo { aspect-ratio: 4 / 3; }
+  .pied__haut p { text-align: left; }
+}
+@media (max-width: 420px) {
+  .nav ul a { letter-spacing: .16em; font-size: .7rem; }
+  .atouts { grid-template-columns: 1fr; }
+  .atouts li, .atouts li + li { padding-left: 0; border-left: 0; padding-bottom: 14px; border-bottom: 1px solid var(--filet-noir); }
+  .horaires td { font-size: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

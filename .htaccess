@@ -1,0 +1,20 @@
+# L'Escale - réglages serveur (hébergement OVH)
+AddDefaultCharset UTF-8
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg
+
+# Cache navigateur
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+</IfModule>
+
+# Redirection vers https://www. - A ACTIVER UNIQUEMENT une fois le certificat SSL actif
+# RewriteEngine On
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^ https://www.escale-wavre.be%{REQUEST_URI} [L,R=301]
