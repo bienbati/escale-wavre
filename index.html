@@ -15,7 +15,7 @@
 <meta property="og:locale" content="fr_BE">
 <meta name="theme-color" content="#0e0e0d">
 <link rel="preload" href="fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -191,18 +191,50 @@
     <div class="renovation__texte">
       <p class="label">La rénovation</p>
       <h2>Un bar rénové <em>par Bien Bâti</em></h2>
-      <p>En 2026, l’arrière de L’Escale a été entièrement refait : couloir, sanitaires, carreaux de ciment noir et blanc, lambris noir, portes battantes et puits de lumière. Le même esprit café d’autrefois, avec des finitions d’aujourd’hui.</p>
+      <p>En janvier 2026, l’arrière de L’Escale a été entièrement refait : couloir, sanitaires, carreaux de ciment noir et blanc, lambris noir, portes battantes et puits de lumière. Le même esprit café d’autrefois, avec des finitions d’aujourd’hui. Faites glisser le curseur sur les photos pour comparer.</p>
       <p>Les travaux ont été réalisés par Bien Bâti, entreprise de rénovation basée à Rhode-Saint-Genèse. Prochaine étape en janvier 2027 : la salle avant, le comptoir et la façade.</p>
       <div class="boutons">
         <a class="bouton bouton--ligne" href="https://www.bienbati.be/" target="_blank" rel="noopener">Découvrir Bien Bâti</a>
       </div>
     </div>
-    <div class="renovation__photos">
-      <figure class="photo photo--reno"><img src="img/photos/renovation-pendant.jpg" alt="L’arrière du bar pendant les travaux : carrelage posé, murs en cours de finition" width="1100" height="1100" loading="lazy"><figcaption class="etiquette">Pendant les travaux</figcaption></figure>
-      <figure class="photo photo--reno"><img src="img/photos/renovation-apres.jpg" alt="L’arrière du bar après les travaux : portes noires et carreaux de ciment" width="1100" height="1468" loading="lazy"><figcaption class="etiquette">Après</figcaption></figure>
-    </div>
+    <figure class="comparo comparo--paysage">
+      <div class="comparo__cadre" style="--pos: 50%">
+        <img class="comparo__apres" src="img/photos/apres-entree.jpg" alt="Après : l’entrée des toilettes avec portes battantes noires et carreaux de ciment" width="1400" height="1050" loading="lazy">
+        <img class="comparo__avant" src="img/photos/avant-entree.jpg" alt="Avant : l’entrée des toilettes, deux portes à encadrement et vieux carrelage brun" width="1400" height="1050" loading="lazy">
+        <span class="etiquette etiquette--g">Avant</span><span class="etiquette etiquette--d">Après</span>
+        <input class="comparo__curseur" type="range" min="0" max="100" value="50" id="comparo-entree" aria-label="Comparer avant et après : entrée des toilettes">
+      </div>
+      <figcaption>L’entrée des toilettes</figcaption>
+    </figure>
+  </div>
+  <div class="wrap renovation__paires">
+    <figure class="comparo">
+      <div class="comparo__cadre" style="--pos: 50%">
+        <img class="comparo__apres" src="img/photos/apres-porte.jpg" alt="Après : la porte privée, lambris noir et carreaux de ciment" width="900" height="1205" loading="lazy">
+        <img class="comparo__avant" src="img/photos/avant-porte.jpg" alt="Avant : le couloir vers la porte privée, carrelage brun" width="900" height="1200" loading="lazy">
+        <span class="etiquette etiquette--g">Avant</span><span class="etiquette etiquette--d">Après</span>
+        <input class="comparo__curseur" type="range" min="0" max="100" value="50" id="comparo-porte" aria-label="Comparer avant et après : couloir et porte privée">
+      </div>
+      <figcaption>Le couloir et la porte privée</figcaption>
+    </figure>
+    <figure class="comparo">
+      <div class="comparo__cadre" style="--pos: 50%">
+        <img class="comparo__apres" src="img/photos/pendant-wc.jpg" alt="Pendant les travaux : carrelage métro blanc et carreaux de ciment posés" width="900" height="1200" loading="lazy">
+        <img class="comparo__avant" src="img/photos/avant-wc.jpg" alt="Avant : le couloir des toilettes, vieux carrelage et sèche-mains" width="900" height="1200" loading="lazy">
+        <span class="etiquette etiquette--g">Avant</span><span class="etiquette etiquette--d">Pendant les travaux</span>
+        <input class="comparo__curseur" type="range" min="0" max="100" value="50" id="comparo-wc" aria-label="Comparer avant et pendant les travaux : toilettes">
+      </div>
+      <figcaption>Les toilettes</figcaption>
+    </figure>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.comparo__curseur').forEach(function (c) {
+    function maj() { c.parentNode.style.setProperty('--pos', c.value + '%'); }
+    c.addEventListener('input', maj); maj();
+  });
+</script>
 
 <footer class="pied">
   <div class="wrap">
