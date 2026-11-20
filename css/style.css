@@ -340,3 +340,4 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .video-serie figcaption { margin-top: 8px; font-size: .82rem; color: var(--gris); text-align: center; }
 .logo-bb { display: block; height: 1.05em; width: auto; margin-top: .3em; }
 .rubrique li .deg { font-style: normal; font-family: var(--f-texte); font-size: .72rem; letter-spacing: .04em; color: var(--gris-clair); white-space: nowrap; margin-left: .2em; }
+.horaires th small { display: block; font-size: .78rem; color: var(--gris); letter-spacing: .04em; margin-top: 2px; }
