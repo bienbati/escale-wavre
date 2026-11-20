@@ -220,6 +220,10 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .horaires th, .horaires td { text-align: left; padding: 16px 0; border-bottom: 1px solid var(--filet-noir); vertical-align: baseline; }
 .horaires th { font-weight: 400; padding-right: 16px; }
 .horaires td { font-family: var(--f-titre); font-size: 1.5rem; white-space: nowrap; text-align: right; }
+.fermeture {
+  margin: 22px 0 0; padding: 12px 16px; border: 1px solid var(--noir);
+  font-family: var(--f-label); font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+}
 .note { color: var(--gris); font-size: .92rem; margin-top: 18px; }
 
 .adresse { font-style: normal; font-family: var(--f-titre); font-size: 1.5rem; line-height: 1.4; margin: 8px 0 18px; }
