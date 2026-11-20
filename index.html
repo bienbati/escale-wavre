@@ -6,6 +6,10 @@
 <title>L’Escale · Apéro bar à Wavre</title>
 <meta name="description" content="L’Escale, apéro bar familial au centre de Wavre, place Cardinal Mercier face à l’église. Petite restauration non-stop, bières, cocktails, terrasse. Ouvert tous les jours jusqu’à 1h, 2h le week-end.">
 <link rel="canonical" href="https://www.escale-wavre.be/">
+<link rel="alternate" hreflang="fr-BE" href="https://www.escale-wavre.be/">
+<link rel="alternate" hreflang="nl-BE" href="https://www.escale-wavre.be/nl/">
+<link rel="alternate" hreflang="en" href="https://www.escale-wavre.be/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.escale-wavre.be/">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="L’Escale · Apéro bar à Wavre">
@@ -15,7 +19,7 @@
 <meta property="og:locale" content="fr_BE">
 <meta name="theme-color" content="#0e0e0d">
 <link rel="preload" href="fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,6 +54,7 @@
       <li><a href="#la-carte">La carte</a></li>
       <li><a href="#infos">Horaires &amp; accès</a></li>
     </ul>
+    <p class="langues" aria-label="Choisir la langue"><a href="/" hreflang="fr" lang="fr" aria-current="page">FR</a><a href="/nl/" hreflang="nl" lang="nl">NL</a><a href="/en/" hreflang="en" lang="en">EN</a></p>
   </div>
 </nav>
 
@@ -103,45 +108,32 @@
       <p>Petite restauration servie non-stop : les classiques bien faits, et de temps en temps un plat mijoté quand le chef s’y met.</p>
     </div>
 
-    <div class="carte__cadre">
-      <div class="rubrique">
-        <h3>Les classiques</h3>
-        <p class="quand">Toujours à la carte</p>
-        <ul>
-          <li><span>Croquettes aux crevettes</span></li>
-          <li><span>Fondue parmesan</span></li>
-          <li><span>Croque-monsieur</span></li>
-          <li><span>Spaghetti bolognaise</span></li>
-        </ul>
-      </div>
-      <div class="rubrique">
-        <h3>Selon le chef</h3>
-        <p class="quand">De temps en temps, tant qu’il y en a</p>
-        <ul>
-          <li><span>Carbonades à la flamande</span></li>
-          <li><span>Boulettes sauce tomate</span></li>
-        </ul>
-      </div>
-      <div class="rubrique">
-        <h3>Au comptoir</h3>
-        <p class="quand">Du café au dernier verre</p>
-        <ul>
-          <li><span>Bières</span><small>belle sélection</small></li>
-          <li><span>Cocktails</span></li>
-          <li><span>Cafés</span></li>
-        </ul>
-      </div>
+    <!-- CARTE -->
+    <h3 class="carte__partie">En cuisine</h3>
+    <div class="carte__cadre carte__cadre--cuisine">
+    <div class="rubrique"><h4>Petite restauration</h4><p class="quand">Servie non-stop</p><ul><li><span>Croque-monsieur</span><b>9,00</b></li><li><span>Croque-madame<em>avec œuf</em></span><b>9,50</b></li><li><span>Omelette nature</span><b>9,50</b></li><li><span>Omelette jambon-fromage</span><b>11,00</b></li><li><span>Omelette paysanne</span><b>14,00</b></li><li><span>Potage maison</span><b>8,00</b></li><li><span>Tapas</span><b>10,00</b></li><li><span>Fondue au fromage</span><b>15,00</b></li><li><span>Croquettes de crevettes</span><b>18,00</b></li><li><span>Calamars frits<em>sauce tartare maison et salade</em></span><b>18,00</b></li><li><span>Spaghetti carbonara</span><b>13,50</b></li><li><span>Spaghetti bolognaise</span><b>14,00</b></li><li><span>Salade du chef</span><b>17,00</b></li><li><span>Vol-au-vent maison</span><b>18,00</b></li><li><span>Cassolette de scampis</span><b>18,00</b></li><li><span>Ravioles de Saint-Jacques<em>coulis de tomates fraîches</em></span><b>18,00</b></li><li><span>Américain maison<em>frites et salade</em></span><b>19,00</b></li><li><span>Carbonades flamandes</span><b>21,00</b></li></ul></div>
+    <div class="rubrique"><h4>Douceurs</h4><ul><li><span>Crêpes au sucre</span><b>7,00</b></li><li><span>Crêpes Mikado</span><b>10,00</b></li></ul></div>
+    <div class="rubrique"><h4>Snacks</h4><p class="quand">Pour l’apéro</p><ul><li><span>Chips</span><b>1,50</b></li><li><span>Portion de salami</span><b>8,00</b></li><li><span>Portion de fromage</span><b>8,50</b></li><li><span>Portion mixte</span><b>9,00</b></li></ul></div>
+    <div class="rubrique"><h4>Selon le chef</h4><p class="quand">De temps en temps, tant qu’il y en a</p><ul><li><span>Boulettes sauce tomate</span></li></ul></div>
     </div>
-    <p class="carte__pied">Le plat du moment est annoncé au bar et sur notre page Google.</p>
-
-    <div class="marques" id="marques">
-      <p class="label">Au comptoir, on sert notamment</p>
-      <dl class="marques__liste">
-        <div><dt>Bières</dt><dd><span>Maes</span><span>Grimbergen</span></dd></div>
-        <div><dt>Softs</dt><dd><span>Coca-Cola</span><span>Aquarius</span></dd></div>
-      </dl>
+    <h3 class="carte__partie">Au bar</h3>
+    <div class="carte__cadre carte__cadre--bar">
+    <div class="rubrique rubrique--compacte"><h4>Bières au fût</h4><ul><li><span>Maes</span><b><small>25 cl</small> 2,90</b></li><li><span>Maes</span><b><small>33 cl</small> 3,60</b></li><li><span>Maes</span><b><small>50 cl</small> 5,50</b></li><li><span>Grimbergen Blonde</span><b>4,00</b></li><li><span>Pêche Mel Bush</span><b>5,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Bières en bouteille</h4><ul><li><span>Blanche de Bruges</span><b>3,90</b></li><li><span>Carlsberg</span><b>3,80</b></li><li><span>Carlsberg 0,0 %</span><b>3,80</b></li><li><span>Ciney Blonde</span><b>3,90</b></li><li><span>La Chouffe</span><b>5,50</b></li><li><span>Duvel</span><b>5,50</b></li><li><span>Grimbergen Double</span><b>5,50</b></li><li><span>Gordon Scotch</span><b>5,00</b></li><li><span>Kasteel Rouge</span><b>5,50</b></li><li><span>Liefmans</span><b>4,00</b></li><li><span>Gueuze Mort Subite</span><b>4,00</b></li><li><span>Kriek Mort Subite</span><b>4,00</b></li><li><span>Ramée Ambrée</span><b>5,30</b></li><li><span>Rodenbach</span><b>4,00</b></li><li><span>Maredsous</span><b>5,50</b></li><li><span>Tripel Karmeliet</span><b>5,50</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Trappistes</h4><ul><li><span>Chimay Bleue</span><b>5,50</b></li><li><span>Orval</span><b>6,00</b></li><li><span>Westmalle Tripel</span><b>5,50</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Apéritifs</h4><ul><li><span>Limoncello</span><b>7,80</b></li><li><span>Campari</span><b>7,00</b></li><li><span>Ricard</span><b>7,00</b></li><li><span>Genièvre</span><b>5,00</b></li><li><span>Pisang</span><b>7,00</b></li><li><span>Malibu</span><b>7,00</b></li><li><span>Batida de Coco</span><b>7,00</b></li><li><span>Martini blanc ou rouge</span><b>6,00</b></li><li><span>Porto</span><b>5,00</b></li><li><span>Pineau des Charentes</span><b>5,00</b></li><li><span>Picon vin blanc</span><b>7,00</b></li><li><span>Picon bière</span><b>6,00</b></li><li><span>Kir</span><b>5,00</b></li><li><span>Kir royal</span><b>11,00</b></li><li><span>Get 27</span><b>7,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Cocktails</h4><ul><li><span>Mojito</span><b>11,00</b></li><li><span>Caipirinha</span><b>11,00</b></li><li><span>Tequila Sunrise</span><b>11,00</b></li><li><span>Blue Lagoon</span><b>11,00</b></li><li><span>Bloody Mary</span><b>11,00</b></li><li><span>Piña Colada</span><b>11,00</b></li><li><span>Spritz Aperol</span><b>11,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Alcools</h4><ul><li><span>Disaronno Amaretto</span><b>7,50</b></li><li><span>J&amp;B</span><b>7,50</b></li><li><span>Baileys</span><b>7,50</b></li><li><span>Chivas Regal</span><b>9,50</b></li><li><span>Johnnie Walker</span><b>7,50</b></li><li><span>Jack Daniel’s</span><b>9,00</b></li><li><span>Vodka blanche ou rouge</span><b>7,50</b></li><li><span>Bacardi</span><b>7,50</b></li><li><span>Bacardi Reserva</span><b>8,50</b></li><li><span>Havana Club</span><b>8,50</b></li><li><span>Captain Morgan</span><b>7,50</b></li><li><span>Tequila</span><b>8,00</b></li><li><span>Gin Gordon’s</span><b>7,50</b></li><li><span>Bombay Sapphire</span><b>8,00</b></li><li><span>Cointreau</span><b>8,50</b></li><li><span>Calvados</span><b>9,50</b></li><li><span>Cognac</span><b>9,50</b></li><li><span>Accompagnement soft</span><b>2,50</b></li><li><span>Accompagnement Red Bull</span><b>3,50</b></li><li><span>Shot</span><b>7,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Vins & bulles</h4><ul><li><span>Blanc, rouge ou rosé</span><b><small>verre</small> 4,50</b></li><li><span>Blanc, rouge ou rosé</span><b><small>¼ l</small> 8,00</b></li><li><span>Blanc, rouge ou rosé</span><b><small>½ l</small> 10,00</b></li><li><span>Cava</span><b><small>coupe</small> 8,00</b></li><li><span>Champagne</span><b><small>coupe</small> 11,00</b></li><li><span>Champagne</span><b><small>bouteille</small> 80,00</b></li><li><span>Vrancken premier cru</span><b><small>bouteille</small> 95,00</b></li><li><span>Vrancken Demoiselle</span><b><small>bouteille</small> 110,00</b></li><li><span>Laurent-Perrier</span><b><small>bouteille</small> 110,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Softs</h4><ul><li><span>Coca-Cola</span><b><small>20 cl</small> 2,90</b></li><li><span>Coca-Cola Zero Sugar</span><b><small>20 cl</small> 2,90</b></li><li><span>Sprite</span><b><small>20 cl</small> 2,90</b></li><li><span>Fanta Orange</span><b><small>20 cl</small> 2,90</b></li><li><span>Fuze Tea Peach Hibiscus</span><b><small>20 cl</small> 3,00</b></li><li><span>Fuze Tea Sparkling Lemon</span><b><small>20 cl</small> 3,00</b></li><li><span>Aquarius Lemon</span><b><small>20 cl</small> 3,00</b></li><li><span>Schweppes Tonic</span><b>3,00</b></li><li><span>Schweppes Agrumes</span><b>3,00</b></li><li><span>Gini</span><b>3,00</b></li><li><span>Canada Dry</span><b>3,00</b></li><li><span>Cécémel</span><b>3,50</b></li><li><span>Red Bull</span><b>4,50</b></li><li><span>Supplément sirop</span><b>0,50</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Eaux</h4><ul><li><span>Chaudfontaine plate</span><b><small>25 cl</small> 2,80</b></li><li><span>Chaudfontaine pétillante</span><b><small>25 cl</small> 2,80</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Jus de fruits</h4><ul><li><span>Minute Maid orange</span><b><small>20 cl</small> 3,00</b></li><li><span>Minute Maid multivitamines</span><b><small>20 cl</small> 3,00</b></li><li><span>Minute Maid tomate</span><b><small>20 cl</small> 3,00</b></li><li><span>Jus d’orange frais pressé</span><b>4,50</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Boissons chaudes</h4><ul><li><span>Espresso</span><b>3,00</b></li><li><span>Café</span><b>3,00</b></li><li><span>Décaféiné</span><b>3,00</b></li><li><span>Cappuccino</span><b>3,20</b></li><li><span>Thé</span><b>2,80</b></li><li><span>Thé à la menthe fraîche</span><b>3,00</b></li><li><span>Chocolat chaud</span><b>3,00</b></li><li><span>Irish coffee</span><b>11,00</b></li></ul></div>
+    <div class="rubrique rubrique--compacte"><h4>Smoothies</h4><ul><li><span>Smoothie</span><b>9,00</b></li><li><span>Smoothie avec alcool</span><b>12,00</b></li></ul></div>
     </div>
-  </div>
+    <p class="carte__pied">Le plat du moment est annoncé au bar et sur notre page Google. Prix en euros, TVA comprise.</p>
+    <!-- /CARTE -->
+    </div>
 </section>
 
 <div class="damier" role="presentation"></div>

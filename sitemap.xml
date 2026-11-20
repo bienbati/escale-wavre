@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.escale-wavre.be/</loc><lastmod>2026-11-19</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.escale-wavre.be/</loc><lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.escale-wavre.be/"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.escale-wavre.be/nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.escale-wavre.be/en/"/></url>
+  <url><loc>https://www.escale-wavre.be/nl/</loc><lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.escale-wavre.be/"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.escale-wavre.be/nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.escale-wavre.be/en/"/></url>
+  <url><loc>https://www.escale-wavre.be/en/</loc><lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://www.escale-wavre.be/"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://www.escale-wavre.be/nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.escale-wavre.be/en/"/></url>
 </urlset>
