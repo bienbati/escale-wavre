@@ -98,7 +98,7 @@ body::before {
 
 /* ---------- Ouverture ---------- */
 .hero { background: var(--noir); color: var(--blanc); text-align: center; }
-.hero .wrap { padding-block: clamp(48px, 9vw, 96px) clamp(36px, 6vw, 64px); }
+.hero .wrap { padding-block: clamp(48px, 9vw, 96px); }
 .hero__logo { width: min(560px, 86%); height: auto; margin: 0 auto; }
 .hero__accroche {
   font-family: var(--f-titre);
