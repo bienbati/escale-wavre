@@ -339,3 +339,4 @@ section { padding-block: clamp(64px, 10vw, 120px); }
 .video-serie video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #000; object-fit: cover; }
 .video-serie figcaption { margin-top: 8px; font-size: .82rem; color: var(--gris); text-align: center; }
 .logo-bb { display: block; height: 1.05em; width: auto; margin-top: .3em; }
+.rubrique li .deg { font-style: normal; font-family: var(--f-texte); font-size: .72rem; letter-spacing: .04em; color: var(--gris-clair); white-space: nowrap; margin-left: .2em; }
